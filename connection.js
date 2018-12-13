@@ -9,7 +9,7 @@ var con = mysql.createConnection({
 });
 
 if (process.env.INSTANCE_CONNECTION_NAME && process.env.NODE_ENV === 'production') {
-  con.socketPath = `/cloudsql/${process.env.INSTANCE_CONNECTION_NAME}:${process.env.SQL_NAME}`;
+  con.socketPath = `/cloudsql/${process.env.INSTANCE_CONNECTION_NAME}:${process.env.PORT}`;
 }
 
 con.connect(function(err) {
