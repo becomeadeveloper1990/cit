@@ -1,6 +1,7 @@
 const mysql = require('mysql');
 
 var con = mysql.createConnection({
+  "host": 35.226.34.58,
   "GCLOUD_PROJECT": "cit-node",
   "DATA_BACKEND": "cloudsql",
   "MYSQL_USER": "root",
