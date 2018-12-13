@@ -47,9 +47,8 @@ app.get('/results', (req, res) => {
 
 
 // Start the server
-const server = app.listen(8080, "172.217.13.116", () => {
-  const host = server.address().address;
-  const port = server.address().port;
-
-  console.log(`Example app listening at http://${host}:${port}`);
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
+  console.log('Press Ctrl+C to quit.');
 });
