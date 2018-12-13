@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const d3plus = require('d3plus');
 const fs = require('fs');
+require('dotenv').config();
 
 var {con} = require('./connection');
 

@@ -1,13 +1,16 @@
 const mysql = require('mysql');
 
 var con = mysql.createConnection({
-  "host": "http://35.226.34.58",
-  "GCLOUD_PROJECT": "cit-node",
-  "DATA_BACKEND": "cloudsql",
-  "MYSQL_USER": "root",
-  "MYSQL_PASSWORD": "L00k4ugood!",
-  "INSTANCE_CONNECTION_NAME": "cit-node:us-central1:cit-db"
+  host: "35.226.34.58",
+  user: process.env.SQL_USER,
+  password: process.env.SQL_PASSWORD,
+  database: process.env.SQL_NAME
+
 });
+
+if (process.env.NODE_ENV === 'production') {
+  con.socketPath = `/cloudsql/${process.env.INSTANCE_CONNECTION_NAME}`;
+}
 
 con.connect(function(err) {
   if (err) throw err;
