@@ -45,7 +45,7 @@ app.get('/results', (req, res) => {
 
 
 
-app.listen(8080, () => {
+const server = app.listen(8080, () => {
   const host = server.address().address;
   const port = server.address().port;
 
