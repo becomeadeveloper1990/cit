@@ -1,0 +1,23 @@
+{
+  "name": "cit",
+  "version": "1.0.0",
+  "description": "Node.JS web app to query database and use the D3Plus library to make visualizations of the data.",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "d3": "^5.7.0",
+    "d3plus": "^2.0.0-alpha.17",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mariadb": "^2.0.2-rc",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

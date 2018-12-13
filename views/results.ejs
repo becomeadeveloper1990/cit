@@ -1,0 +1,41 @@
+<% include partials/header.ejs %>
+
+<script src="http://d3plus.org/js/d3.js"></script>
+<script src="http://d3plus.org/js/d3plus.js"></script>
+
+<div id="jobsData"></div>
+<div id="salesData"></div>
+<script>
+  var jobsData = [
+    {"year": 2011, "name":"jobs", "<%= industry %>": <%= jobs11 %>},
+    {"year": 2012, "name":"jobs", "<%= industry %>": <%= jobs12 %>},
+    {"year": 2013, "name":"jobs", "<%= industry %>": <%= jobs13 %>},
+    {"year": 2014, "name":"jobs", "<%= industry %>": <%= jobs14 %>}
+  ]
+  var jobs = d3plus.viz()
+    .container("#jobsData")
+    .data(jobsData)
+    .type("line")
+    .id("name")
+    .x("year")
+    .y("<%= industry %>")
+    .draw()
+
+  var salesData = [
+    {"year": 2011, "name":"sales", "<%= industry %>": <%= sales11 %>},
+    {"year": 2012, "name":"sales", "<%= industry %>": <%= sales12 %>},
+    {"year": 2013, "name":"sales", "<%= industry %>": <%= sales13 %>},
+    {"year": 2014, "name":"sales", "<%= industry %>": <%= sales14 %>}
+  ]
+  var sales = d3plus.viz()
+    .container("#salesData")
+    .data(salesData)
+    .type("line")
+    .id("name")
+    .x("year")
+    .y("<%= industry %>")
+    .draw()
+ </script>
+
+
+ <% include partials/footer.ejs %>
