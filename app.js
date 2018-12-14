@@ -3,9 +3,10 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const d3plus = require('d3plus');
 const fs = require('fs');
+
 require('dotenv').config();
 
-var {con} = require('./connection');
+// var {con} = require('./connection');
 
 var app = express();
 app.use(express.static(__dirname + '/views'));
@@ -47,8 +48,8 @@ app.get('/results', (req, res) => {
 
 
 // Start the server
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
   console.log('Press Ctrl+C to quit.');
 });
