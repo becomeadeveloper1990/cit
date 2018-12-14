@@ -1,12 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const d3plus = require('d3plus');
-const fs = require('fs');
 
-require('dotenv').config();
-
-// var {con} = require('./connection');
+var {con} = require('./connection');
 
 var app = express();
 app.use(express.static(__dirname + '/views'));
@@ -23,6 +19,9 @@ app.get('/results', (req, res) => {
   var queryString = "select * from mytable where NAICS = " + naics + "";
 
     con.query(queryString, (err, rows, fields) => {
+      if (!rows.length) {
+          res.send(`There are no matching records for ${naics}!`);
+      }
       for (i in rows) {
         var sales2011 = rows[i].Sales_2011
         var sales2012 = rows[i].Sales_2012
